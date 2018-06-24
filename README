@@ -1,5 +1,5 @@
-Powershell Wrapper for SSH
-==========================
+Powershell Wrapper for ssh-agent
+================================
 
 Once downloaded, move the script to ~/Documents/WindowsPowershell then
 edit your profile.ps1 to source it:
