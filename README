@@ -1,0 +1,19 @@
+Powershell Wrapper for SSH
+==========================
+
+Once downloaded, move the script to ~/Documents/WindowsPowershell then
+edit your profile.ps1 to source it:
+
+	. ~/Documents/WindowsPowershell/ssh-agent.ps1
+
+This will put three functions into your environment:
+
+	Start-SshAgent
+	Stop-SshAgent
+	Get-SshAgent
+
+They do exactly what it says on the tin, and set the environment variables 
+SSH_AGENT_PID and SSH_AUTH_SOCK correctly. Once running, keys can be added
+using ssh-add.exe as normal.
+
+Chris J, June 2018
