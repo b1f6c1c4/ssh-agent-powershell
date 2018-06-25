@@ -13,7 +13,13 @@ This will put three functions into your environment:
 	Get-SshAgent
 
 They do exactly what it says on the tin, and set the environment variables 
-SSH_AGENT_PID and SSH_AUTH_SOCK correctly. Once running, keys can be added
-using ssh-add.exe as normal.
+SSH_AGENT_PID and SSH_AUTH_SOCK correctly. These variables are set at both
+the process and user level, so any new processes started in the user session
+after the agent has started will inherit the same ssh-agent configuration.
+
+Once running, keys can be added using ssh-add.exe as normal.
+
+The ssh-agent used is that from a standard Git install (using Git for Windows
+from https://git-scm.com/ ), which by default is in %PROGRAMFILES%\usr\bin.
 
 Chris J, June 2018

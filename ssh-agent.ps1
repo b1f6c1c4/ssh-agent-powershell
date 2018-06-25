@@ -1,3 +1,12 @@
+############################################################################
+#
+# PowerShell wrapper to configure ssh-agent and environment
+# Chris J, June 2018
+#
+# https://github.com/rangercej/ssh-agent-powershell
+#
+############################################################################
+
 function Start-SshAgent
 {
 	$running = Get-SshAgent
@@ -6,7 +15,7 @@ function Start-SshAgent
 		return
 	}
 
-	$shout = & "C:\Program Files\git\usr\bin\ssh-agent.exe" -c
+	$shout = & "$env:ProgramFiles\Git\usr\bin\ssh-agent.exe" -c
 	$shout | foreach-object {
 		$parts = $_ -split " "
 		if ($parts[0] -ieq "setenv") {
