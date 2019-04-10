@@ -15,7 +15,7 @@ function Start-SshAgent
 		return
 	}
 
-	$shout = & "$env:ProgramFiles\Git\usr\bin\ssh-agent.exe" -c
+	$shout = & "$env:ProgramFiles\OpenSSH-Win64\ssh-agent.exe" -c
 	$shout | foreach-object {
 		$parts = $_ -split " "
 		if ($parts[0] -ieq "setenv") {
